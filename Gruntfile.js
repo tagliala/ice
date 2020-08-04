@@ -5,7 +5,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
 
     jshint: {
-      src: ['src/**/*.js'],
+      all: ['Gruntfile.js', 'src/**/*.js', 'lib/tinymce/js/tinymce/plugins/*.js', 'wp-plugin/**/*.js'],
       options: {
         browser: true,
         indent: 2,
@@ -55,9 +55,6 @@ module.exports = function(grunt) {
 
     uglify: {
       options: {
-        beautify : {
-            ascii_only : true
-          } ,
         preserveComments: false,
         banner: '//\n' +
           '// <%= pkg.name %> - v<%= pkg.version %>\n' +
